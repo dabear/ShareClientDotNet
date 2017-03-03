@@ -24,6 +24,7 @@ namespace ShareClientDotNet
         protected string dexcomServerNonUS = "https://shareous1.dexcom.com";
 
         protected string dexcomServer;
+        public string CurrentDexcomServer => this.dexcomServer ?? "";
 
         protected int maxReauthAttempts = 3;
         protected int sleepBetweenRetries = 1000;
