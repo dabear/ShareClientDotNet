@@ -28,8 +28,8 @@ namespace ShareClientDotNet
         protected int maxReauthAttempts = 3;
         protected int sleepBetweenRetries = 1000;
 
-        protected string username;
-        protected string password;
+        public string username;
+        public string password;
 
         protected string token;
 
@@ -79,6 +79,13 @@ namespace ShareClientDotNet
                 WriteDebug($"Got exception in sending to endpoint {err}");
                 throw err;
             }
+        }
+
+        public ShareClient(ShareServer shareServer = ShareServer.ShareServerUS)
+        {
+            this.dexcomServer = shareServer == ShareServer.ShareServerUS ?
+                this.dexcomServerUS :
+                this.dexcomServerNonUS;
         }
 
         public ShareClient(string username, string password, ShareServer shareServer = ShareServer.ShareServerUS)
