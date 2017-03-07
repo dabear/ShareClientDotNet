@@ -82,11 +82,16 @@ namespace ShareClientDotNet
             }
         }
 
-        public ShareClient(ShareServer shareServer = ShareServer.ShareServerUS)
+        public void SetShareServer(ShareServer shareServer)
         {
             this.dexcomServer = shareServer == ShareServer.ShareServerUS ?
-                this.dexcomServerUS :
-                this.dexcomServerNonUS;
+               this.dexcomServerUS :
+               this.dexcomServerNonUS;
+        }
+
+        public ShareClient(ShareServer shareServer = ShareServer.ShareServerUS)
+        {
+            this.SetShareServer(shareServer);
         }
 
         public ShareClient(string username, string password, ShareServer shareServer = ShareServer.ShareServerUS)
@@ -94,9 +99,7 @@ namespace ShareClientDotNet
             this.username = username;
             this.password = password;
 
-            this.dexcomServer = shareServer == ShareServer.ShareServerUS ?
-                this.dexcomServerUS :
-                this.dexcomServerNonUS;
+            this.SetShareServer(shareServer);
         }
 
         public async Task<string> fetchToken()
