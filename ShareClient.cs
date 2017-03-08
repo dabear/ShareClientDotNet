@@ -29,8 +29,42 @@ namespace ShareClientDotNet
         protected int maxReauthAttempts = 3;
         protected int sleepBetweenRetries = 1000;
 
-        public string username;
-        public string password;
+        private string _username;
+        private string _password;
+
+        public string Username
+        {
+            get
+            {
+                return this._username;
+            }
+            set
+            {
+                if (this.token != null && this._username != null && this._username != value)
+                {
+                    WriteDebug("Invalidating token, because username changed");
+                    this.token = null;
+                }
+                this._username = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return this._password;
+            }
+            set
+            {
+                if (this.token != null && this._password != null && this._password != value)
+                {
+                    WriteDebug("Invalidating token, because username changed");
+                    this.token = null;
+                }
+                this._password = value;
+            }
+        }
 
         protected string token;
 
@@ -84,9 +118,16 @@ namespace ShareClientDotNet
 
         public void SetShareServer(ShareServer shareServer)
         {
-            this.dexcomServer = shareServer == ShareServer.ShareServerUS ?
+            var newShareServer = shareServer == ShareServer.ShareServerUS ?
                this.dexcomServerUS :
                this.dexcomServerNonUS;
+
+            if (this.token != null && newShareServer != this.dexcomServer)
+            {
+                Console.WriteLine("Invalidating token, because dexcomserver changed");
+            }
+
+            this.dexcomServer = newShareServer;
         }
 
         public ShareClient(ShareServer shareServer = ShareServer.ShareServerUS)
@@ -96,8 +137,8 @@ namespace ShareClientDotNet
 
         public ShareClient(string username, string password, ShareServer shareServer = ShareServer.ShareServerUS)
         {
-            this.username = username;
-            this.password = password;
+            this.Username = username;
+            this.Password = password;
 
             this.SetShareServer(shareServer);
         }
@@ -107,8 +148,8 @@ namespace ShareClientDotNet
             string decoded = null;
             var data = new Dictionary<string, string>()
             {
-                { "accountName" , this.username},
-                { "password" , this.password},
+                { "accountName" , this.Username},
+                { "password" , this.Password},
                 { "applicationId" , this.dexcomApplicationId},
             };
 

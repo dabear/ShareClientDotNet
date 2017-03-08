@@ -15,6 +15,15 @@ namespace ShareClientDotNet
     {
         private Action<string> debugger;
 
+        public DebuggableShareClient(Action<string> handler = null)
+        {
+            this.enableDebug = true;
+            if (handler != null)
+            {
+                this.debugger = handler;
+            }
+        }
+
         public DebuggableShareClient(string username, string password, ShareServer shareServer = ShareServer.ShareServerUS, Action<string> handler = null) : base(username, password, shareServer)
         {
             this.enableDebug = true;
