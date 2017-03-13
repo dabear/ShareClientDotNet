@@ -1,7 +1,6 @@
-﻿using System;
-namespace ShareClientDotNet
+﻿namespace ShareClientDotNet
 {
-    static class ShareKnownRemoteErrorCodes
+    internal static class ShareKnownRemoteErrorCodes
     {
         public const string AuthenticateAccountNotFound = "SSO_AuthenticateAccountNotFound";
         public const string AuthenticatePasswordInvalid = "SSO_AuthenticatePasswordInvalid";
@@ -10,6 +9,5 @@ namespace ShareClientDotNet
         // these two will be handled internally
         // SessionIdNotFound
         // SessionNotValid"
-
     }
 }

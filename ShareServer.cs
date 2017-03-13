@@ -1,6 +1,4 @@
-﻿
-
-namespace ShareClientDotNet
+﻿namespace ShareClientDotNet
 {
     public enum ShareServer
     {

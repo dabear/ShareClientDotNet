@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ShareClientDotNet
+﻿namespace ShareClientDotNet
 {
     public enum ShareGlucoseSlopeOrdinals
     {
@@ -16,4 +14,3 @@ namespace ShareClientDotNet
         OUT_OF_RANGE = 9
     }
 }
-
