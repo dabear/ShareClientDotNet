@@ -27,7 +27,11 @@ namespace ShareClientDotNet
 
             //use this if you use the US servers
 
-            var client = new ShareClient(user, password);
+            //var client = new ShareClient(user, password);
+
+            //use this if you need to set a custom share server
+            //var client = new DebuggableShareClient(user, password, "http://yourcustomshareserver.azurewebsites.net");
+            var client = new DebuggableShareClient(user, password, "http://bjorningedia3shareserver.azurewebsites.net");
 
             //Different ways of debugging
             //this will per default write to the console

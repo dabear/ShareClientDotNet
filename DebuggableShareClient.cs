@@ -26,6 +26,24 @@ namespace ShareClientDotNet
             }
         }
 
+        public DebuggableShareClient(string username, string password, string url, Action<string> handler = null) : base(username, password, url)
+        {
+            this.enableDebug = true;
+            if (handler != null)
+            {
+                this.debugger = handler;
+            }
+        }
+
+        public DebuggableShareClient(string url, Action<string> handler = null) : base(url)
+        {
+            this.enableDebug = true;
+            if (handler != null)
+            {
+                this.debugger = handler;
+            }
+        }
+
         protected override void WriteDebug(string msg)
         {
             if (this.debugger == null || !this.enableDebug)
