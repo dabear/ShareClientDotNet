@@ -30,8 +30,8 @@ namespace ShareClientDotNet
             //var client = new ShareClient(user, password);
 
             //use this if you need to set a custom share server
-            //var client = new DebuggableShareClient(user, password, "http://yourcustomshareserver.azurewebsites.net");
-            var client = new DebuggableShareClient(user, password, "http://bjorningedia3shareserver.azurewebsites.net");
+            //var client = new DebuggableShareClient(user, password, "https://yourcustomshareserver.azurewebsites.net");
+            var client = new DebuggableShareClient(user, password, "https://bjorningedia3shareserver.azurewebsites.net");
 
             //Different ways of debugging
             //this will per default write to the console
@@ -86,7 +86,7 @@ namespace ShareClientDotNet
                 Console.WriteLine($"Main Program got general exception: {err.GetType()}: {err}");
             }
 
-            Console.WriteLine($"Main Program: Glucose length: {glucose.Count}");
+            Console.WriteLine($"Main Program: Glucose length: {glucose?.Count ?? 0}");
             Console.WriteLine("Main Program: Finished looking for glucose");
         }
     }

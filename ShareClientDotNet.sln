@@ -1,22 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareClientDotNet", "ShareClientDotNet.csproj", "{2AD02968-E7EA-4989-8BD8-FAD6A31C0072}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareClientDotNet", "ShareClientDotNet.csproj", "{369B6146-7A85-4B60-A1F1-6166AA09D95C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2AD02968-E7EA-4989-8BD8-FAD6A31C0072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AD02968-E7EA-4989-8BD8-FAD6A31C0072}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AD02968-E7EA-4989-8BD8-FAD6A31C0072}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AD02968-E7EA-4989-8BD8-FAD6A31C0072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369B6146-7A85-4B60-A1F1-6166AA09D95C}.Debug|x86.ActiveCfg = Debug|x86
+		{369B6146-7A85-4B60-A1F1-6166AA09D95C}.Debug|x86.Build.0 = Debug|x86
+		{369B6146-7A85-4B60-A1F1-6166AA09D95C}.Release|x86.ActiveCfg = Release|x86
+		{369B6146-7A85-4B60-A1F1-6166AA09D95C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {588D2037-5C93-473A-95CB-1B4BA7729917}
 	EndGlobalSection
 EndGlobal

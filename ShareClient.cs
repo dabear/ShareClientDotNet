@@ -81,7 +81,7 @@ namespace ShareClientDotNet
 
         protected async Task<ShareResponse> dexcomPOST(string url, Dictionary<string, string> data = null)
         {
-            return await this.dexcomPOST(new Uri(url), data);
+            return await dexcomPOST(new Uri(url), data);
         }
 
         protected async Task<ShareResponse> dexcomPOST(Uri url, Dictionary<string, string> data = null)
